@@ -3,20 +3,20 @@ BUSINESS OBJECT MESSAGE FORMAT
   NULL byte ('\0')
   PAYLOAD (raw bytes)
 
- • JSON metadata is rather arbitrary by construction
+ • JSON metadata is rather arbitrary
  • PAYLOAD can be omitted (in which case the message ends with the NULL
    byte).
  • If PAYLOAD is not omitted, metadata must contain fields:
-    - "type" to defined how payload should be interpreted
-    - "size" to define payload size,  
+    - "type" to define how payload should be interpreted
+    - "size" to define payload size  
 
 ----------------------------------------------------
 BUSINESS OBJECT TOP-LEVEL PROPERTIES
  -"type":  (mime)type of payload 
  -"size":  size of payload
  -"id":    TO BE DEFINED
- -"event": one of EVENT TYPES described belos
- -"user":  some pundits demand that this be purely optional
+ -"event": one of EVENT TYPES described below
+ -"user":  some punditæ demand that this be purely optional
  
 
 EVENT TYPES
@@ -34,8 +34,8 @@ EVENT TYPES
        to the client
     • "name" - name of the client program, e.g. "java-tv". optional 
       and purely informational
-    • "user" - name of the user running the program, e.g. "user". 
-      optional and purely informational
+    • "user" - name of the user running the program. optional and purely 
+       informational
  - "error"
 
 IMAGE OBJECTS 
