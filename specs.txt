@@ -1,0 +1,46 @@
+BUSINESS OBJECT MESSAGE FORMAT
+  JSON metadata in UTF-8 encoding
+  NULL byte ('\0')
+  PAYLOAD (raw bytes)
+
+ • JSON metadata is rather arbitrary by construction
+ • PAYLOAD can be omitted (in which case the message ends with the NULL
+   byte).
+ • If PAYLOAD is not omitted, metadata must contain fields:
+    - "type" to defined how payload should be interpreted
+    - "size" to define payload size,  
+
+----------------------------------------------------
+BUSINESS OBJECT TOP-LEVEL PROPERTIES
+ -"type":  (mime)type of payload 
+ -"size":  size of payload
+ -"id":    TO BE DEFINED
+ -"event": one of EVENT TYPES described belos
+ -"user":  some pundits demand that this be purely optional
+ 
+
+EVENT TYPES
+ - "services/register"
+     • "name"
+ - "services/unregister" (closing connection naturally also unregisters)
+     • "name" (if no name, unregister all services of client)    
+ - "services/list"
+ - "client/register" - register a connected client. possible services
+      implemented by the client will be provided separately
+    • "id" - each client must provide an id to receive messages;
+      if no id, a server will provide one (maybe also informing the client
+      of its new id)  
+    • "routing-ids": a list of id:s based on which events shall be routed
+       to the client
+    • "name" - name of the client program, e.g. "java-tv". optional 
+      and purely informational
+    • "user" - name of the user running the program, e.g. "user". 
+      optional and purely informational
+ - "error"
+
+IMAGE OBJECTS 
+ -"type": one of : "image/jpg","image/png","image/gif", ...
+ -"name": arbitrary
+
+ 
+
