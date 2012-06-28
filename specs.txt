@@ -47,7 +47,7 @@ EVENT TYPES
         * "all": everything will be sent
         * "no_echo": everything but objects sent by client itself  
         * "events_only": events only (recall that events may include no or arbitrary CONTENT)
-     • "subscribe" - a json array of CONTENT types that client is willing to receive. Note that
+     • "subscriptions" - a json array of CONTENT types that client is willing to receive. Note that
        this does not consider event types; all events will be received, irrespective of their type
        (and even irrespective of any potential content included as payload!) 
         * "all" to receive everything (default); this is not an json array, but an string literal instead
