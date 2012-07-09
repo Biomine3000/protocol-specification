@@ -33,7 +33,7 @@
    All the communication between clients, servers and
    services uses the common wire protocol described earlier.
 ** Routing
-   Routing in a network is based on routing id's.  Every
+   Routing in a network is based on *routing id's*.  Every
    client, service and server has a unique routing id.
 
    A client doesn't necessarily have to know their routing
@@ -46,11 +46,11 @@
    routing id the sender of the object had.
 
    Routing also uses the =to= attribute for specifying
-   the recipient member of the network.  To-field contains
+   the recipient member of the network.  To-attribute contains
    the routing id of the recipient.
 ** Implementing reply/request semantics
    It is common for a service to add the field =in-reply-to=
-   to a service call reply to.  In-reply-to -field contains
+   to a service call reply to.  In-reply-to -attribute contains
    the unique id of the service request object.
 ** Events
 *** services/
