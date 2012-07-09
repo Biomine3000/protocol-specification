@@ -1,0 +1,94 @@
+* Objects in the Object System
+  Objects consist of metadata and payload.  All objects must
+  contain a metadata section, payload is optional.
+
+  The serialized wire format of an object is formed by a
+  *JSON object*, followed by a *nul byte* and the optional
+  *payload*.  The JSON object is always represented in UTF-8
+  encoding.
+
+  If the payload is not omitted, the metadata must contain
+  the attributes =type= and =size=.  *Type* (or commonly
+  also content type) describes the kind of payload the
+  object is carrying.  Types are mostly mime-types such as
+  =text/plain= and =image/png=.  They can, however, contain
+  extra metadata within them, such as
+  =text/plain; charset=EBDIC=.  *Size* is the size of the
+  payload in bytes.
+
+  It is also common for an object to contain the attribute
+  =id= which is basically a unique object id.
+** Clients, services, servers
+   An Object System network consists of *clients*, *services*
+   and *servers*.
+
+   There can be multiple servers linked to each other in a
+   fully functional network, but it may also consist of a
+   single server.
+
+   There can be arbitrary number of clients connected to any
+   server in a network.  There can also be any number of
+   services connected to a network.
+
+   All the communication between clients, servers and
+   services uses the common wire protocol described earlier.
+** Routing
+   Routing in a network is based on routing id's.  Every
+   client, service and server has a unique routing id.
+
+   A client doesn't necessarily have to know their routing
+   id since the server can fill that up when needed.
+
+   The routes an object takes are recorded on the =route=
+   attribute as a list of routing id's, which are
+   represented as strings.  Route-attribute can then be
+   used by the recipient of an object to inspect which
+   routing id the sender of the object had.
+
+   Routing also uses the =to= attribute for specifying
+   the recipient member of the network.  To-field contains
+   the routing id of the recipient.
+** Implementing reply/request semantics
+   It is common for a service to add the field =in-reply-to=
+   to a service call reply to.  In-reply-to -field contains
+   the unique id of the service request object.
+** Events
+*** services/
+**** services/request
+     =name=
+**** services/reply
+     =name=
+     =in-reply-to=
+     =to=
+**** services/register
+     =name=
+**** services/discovery
+     =name=
+**** services/discovery/reply
+     =name=
+*** clients/
+**** clients/register 
+     =receive= one of
+       - ="none"= nothing will be sent to the client by server
+       - ="all"= everything will be sent
+       - ="no_echo"= everything but objects sent by client itself  
+       - ="events_only"= events only (recall that events may include no or arbitrary CONTENT)
+     =subscriptions= an array of content types the client is willing to receive
+       - ="all"= receive everything (default); this is not an array, but a string literal
+       - ="none"= receive nothing; this is not an array, but string literal
+       - trivial wildcards could be supported at some point
+     =name= name of the client program, e.g. "my-client". Optional and purely informational, not used by protocol
+     ="user"= name of the user running the program. Like name, not needed for functioning.
+     ="routing-id"= the unique routing id for the client. Optional and is provided by the server if not specified.
+     ="routing-ids"= a list of additional id's the user wants to receive objects for
+**** clients/register/reply
+     =routing-id= the routing id of the client
+**** clients/register/notify
+**** clients/part/notify
+**** clients/list
+**** clients/list/reply
+     =others= names of others connected to the server
+     =you= name of the receiving client as seen by the network
+ 
+ 
+ 
