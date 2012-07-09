@@ -58,7 +58,9 @@
      =name=
 **** services/reply
      =name=
+
      =in-reply-to=
+
      =to=
 **** services/register
      =name=
@@ -69,18 +71,18 @@
 *** clients/
 **** clients/register 
      =receive= one of
-       - ="none"= nothing will be sent to the client by server
-       - ="all"= everything will be sent
-       - ="no_echo"= everything but objects sent by client itself  
-       - ="events_only"= events only (recall that events may include no or arbitrary CONTENT)
+       - =none= nothing will be sent to the client by server
+       - =all= everything will be sent
+       - =no_echo= everything but objects sent by client itself  
+       - =events_only= events only (recall that events may include no or arbitrary CONTENT)
      =subscriptions= an array of content types the client is willing to receive
        - ="all"= receive everything (default); this is not an array, but a string literal
        - ="none"= receive nothing; this is not an array, but string literal
        - trivial wildcards could be supported at some point
      =name= name of the client program, e.g. "my-client". Optional and purely informational, not used by protocol
-     ="user"= name of the user running the program. Like name, not needed for functioning.
-     ="routing-id"= the unique routing id for the client. Optional and is provided by the server if not specified.
-     ="routing-ids"= a list of additional id's the user wants to receive objects for
+     =user= name of the user running the program. Like name, not needed for functioning.
+     =routing-id= the unique routing id for the client. Optional and is provided by the server if not specified.
+     =routing-ids= a list of additional id's the user wants to receive objects for
 **** clients/register/reply
      =routing-id= the routing id of the client
 **** clients/register/notify
