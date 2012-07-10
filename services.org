@@ -1,0 +1,28 @@
+* Services
+** Oberst service
+   A service consulting the Oberstdorfsführer for
+   professional titles.
+
+   Service name: =oberst=
+
+   Takes no parameters.
+
+   Returns the title in the payload.
+** Oberst service
+   A service that makes an HTTP HEAD request for an URL.
+
+   Service name: =http_head=
+
+   Takes parameter =url= to signify the URL to make the HEAD
+   request to.
+
+   Returns a JSON object with headers and status code (as
+   =status_code= attribute) as a result.
+** IRC Log service
+   *This service is not yet implemented.*
+
+   A service that provides the logs for an IRC channel.
+   Possible service call parameters would include time
+   interval specifying =start=, =end=, output filtering
+   and compression of results such as =grep=, =match_re=
+   and =gzip=.
