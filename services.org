@@ -8,7 +8,7 @@
    Takes no parameters.
 
    Returns the title in the payload.
-** Oberst service
+** HTTP HEAD service
    A service that makes an HTTP HEAD request for an URL.
 
    Service name: =http_head=
