@@ -96,7 +96,14 @@
      =routing-id= the unique routing id for the client
 
      =routing-ids= a list of additional id's the client wants to receive objects for
+**** routing/disconnect
+     This is sent by the server as a state announcement when a client disconnects.
+     Can be used by the client registry to remove clients that have dropped out.
+
+     =routing-id= routing-id of the disconnected client
 **** routing/neighbors
+     This is Optional.
+
      =id= id of the request
 
      =to= the routing-id of the recipient *server*
