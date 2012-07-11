@@ -68,29 +68,39 @@
      =name=
 **** services/discovery/reply
      =name=
-*** clients/
-**** clients/register 
-     =receive= one of
+*** routing/
+**** routing/subscribe
+     =id= optional. If included, the reply can be linked to this object via =in-reply-to= field.
+
+     =receive_mode= one of
        - =none= nothing will be sent to the client by server
        - =all= everything will be sent
        - =no_echo= everything but objects sent by client itself  
        - =events_only= events only (recall that events may include no or arbitrary CONTENT)
-     =subscriptions= an array of content types the client is willing to receive
-       - ="all"= receive everything (default); this is not an array, but a string literal
-       - ="none"= receive nothing; this is not an array, but string literal
+
+     =types= an array of content types the client is willing to receive
+       - =all= receive everything (default); this is not an array, but a string literal
+       - =none= receive nothing; this is not an array, but string literal
        - trivial wildcards could be supported at some point
-     =name= name of the client program, e.g. "my-client". Optional and purely informational, not used by protocol
-     =user= name of the user running the program. Like name, not needed for functioning.
-     =routing-id= the unique routing id for the client. Optional and is provided by the server if not specified.
-     =routing-ids= a list of additional id's the user wants to receive objects for
-**** clients/register/reply
-     =routing-id= the routing id of the client
-**** clients/register/notify
-**** clients/part/notify
-**** clients/list
-**** clients/list/reply
-     =others= names of others connected to the server
-     =you= name of the receiving client as seen by the network
- 
- 
- 
+
+     =routing-id= the unique routing id for the client. This is *optional* and should *not* be used.
+
+     =routing-ids= a list of additional id's the client wants to receive objects for.
+**** routing/subscribe/reply
+     =in-reply-to= optionally included if the routing/subscribe contained =id=
+
+     =receive_mode= server replies with the same it received
+
+     =types= server replies with the same it received
+
+     =routing-id= the unique routing id for the client
+
+     =routing-ids= a list of additional id's the client wants to receive objects for
+**** routing/neighbors
+     =id= id of the request
+
+     =to= the routing-id of the recipient *server*
+**** routing/neighbors/reply
+     =in-reply-to= id of the request
+
+     =to= the routing-id of the recipient *server*
