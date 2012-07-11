@@ -26,3 +26,18 @@
    interval specifying =start=, =end=, output filtering
    and compression of results such as =grep=, =match_re=
    and =gzip=.
+** Client registry service
+   A service that keeps track of users registered to the network.
+
+   Service name: =clients=
+
+   Takes the following parameters:
+    - =request= (can be one of "join", "leave", "list")
+    - =client= name of the client program, e.g. "my-client"; optional
+    - =user= name of the user, e.g. from environment variable USER; optional
+    - other optional parameters such as =steam_pressure= etc; it is up to the
+      implementation how these work
+
+   Request =list= returns the following fields:
+    - =clients= names and routing-id's of all registered users on the service
+      - contains a list of objects with fields =client=, =user= and =routing-id=
