@@ -89,10 +89,6 @@
 **** routing/subscribe/reply
      =in-reply-to= optionally included if the routing/subscribe contained =id=
 
-     =receive_mode= server replies with the same it received
-
-     =types= server replies with the same it received
-
      =routing-id= the unique routing id for the client
 
      =routing-ids= a list of additional id's the client wants to receive objects for
