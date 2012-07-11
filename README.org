@@ -96,6 +96,14 @@
      =routing-id= the unique routing id for the client
 
      =routing-ids= a list of additional id's the client wants to receive objects for
+**** routing/connect
+     This is sent by the server as a state a state announcement.
+     Can be used by the client registry to automatically tell someone is online.
+
+     =routing-id= routing-id of the connected client
+
+     Note, usually clients also subscribe, so this will result in at least 3
+     objects to be sent (connect, subscribe, disconnect) per client per connection.
 **** routing/disconnect
      This is sent by the server as a state announcement when a client disconnects.
      Can be used by the client registry to remove clients that have dropped out.
