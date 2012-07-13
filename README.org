@@ -39,28 +39,6 @@
    A client doesn't necessarily have to know their routing
    id since the server can fill that up when needed. 
 
-   There are now two conflicting solutions for automatically providing 
-   routing id:s (hopefully we can come to an agreement later):
-
-   leronen:
-   A client had better first request (or provide) a routing
-   id before sending any other objects. If this is not
-   done, the server will automatically provide one when
-   receiving the first object from the client. Until
-   a client has sent its first object (either implicitly
-   or explicitly subscribing routing), the connection
-   is not yet considered fully formed, and nothing is sent 
-   to the client.
-    
-   guaqua: (added by leronen, please edit if this does 
-   not represent the said pundit's true vision)
-   A client is immediately assigned a routing id upon
-   TCP connect, and starts receiving content without 
-   further ado. The client can later change the assigned
-   by a routing/subscribe request if needed (a subscription
-   does not change the id unless a new id is provided by the 
-   client).
-
    The routes an object takes are recorded on the =route=
    attribute as a list of routing id's, which are
    represented as strings.  Route-attribute can then be
@@ -70,6 +48,17 @@
    Routing also uses the =to= attribute for specifying
    the recipient member of the network.  To-attribute contains
    the routing id of the recipient.
+*** Subscription
+    A subscription is required from all clients.  When a client
+    first connects to the server, they don't have a subscription.
+
+    Subscription is attained by sending a =routing/subscribe=
+    event to the server.  After that the client is considered
+    subscribed and can be routed objects to.
+
+    The server replies to the subscription object with a reply
+    and also inform the rest of the network of a subscription
+    via a notification object.
 ** Implementing reply/request semantics
    It is common for a service to add the field =in-reply-to=
    to a service call reply to.  In-reply-to -attribute contains
@@ -108,12 +97,22 @@
      =routing-id= the unique routing id for the client. This is *optional* and should *not* be used.
 
      =routing-ids= a list of additional id's the client wants to receive objects for.
+
+     =role= This is *mandatory* for servers, optional for clients.
+      - =server= for servers
+      - there are no other uses for this field
 **** routing/subscribe/reply
      =in-reply-to= optionally included if the routing/subscribe contained =id=
 
      =routing-id= the unique routing id for the client
 
      =routing-ids= a list of additional id's the client wants to receive objects for
+**** routing/subscribe/notify
+     =routing-id= the unique routing id for the client
+
+     =routing-ids= a list of additional id's the client wants to receive objects for
+
+     =role= if the client is a server, this field is set to =server=
 **** routing/connect
      This is sent by the server as a state a state announcement.
      Can be used by the client registry to automatically tell someone is online.
