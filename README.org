@@ -83,7 +83,7 @@
 **** routing/subscribe
      =id= optional. If included, the reply can be linked to this object via =in-reply-to= field.
 
-     =receive_mode= one of
+     =receive-mode= one of
        - =none= nothing will be sent to the client by server
        - =all= everything will be sent
        - =no_echo= everything but objects sent by client itself  
@@ -92,7 +92,7 @@
      =types= an array of content types the client is willing to receive
        - =all= receive everything (default); this is not an array, but a string literal
        - =none= receive nothing; this is not an array, but string literal
-       - trivial wildcards could be supported at some point
+       - trivial wildcards *could* be supported at some point
 
      =routing-id= the unique routing id for the client. This is *optional* and should *not* be used.
 
