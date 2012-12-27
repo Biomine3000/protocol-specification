@@ -1,4 +1,4 @@
-|B|I|O|M|I|N|E|3|0|0|0| |P|R|O|T|O|C|O|L |S|P|E|C|S|
+|B|I|O|M|I|N|E|3|0|0|0| |P|R|O|T|O|C|O|L| |S|P|E|C|S|
 
 This document describes the procotol used for communicating in the biomine3000 network, also known as
 Advanced Biomine Business Objects Bus (ABBOE).
