@@ -117,7 +117,7 @@ Advanced Biomine Business Objects Bus (ABBOE).
     =routing-id= the unique routing id for the client
 
     =routing-ids= a list of additional id's the client wants to receive objects for
-*** routing/subscribe/notify
+*** routing/subscribe/notification
     =routing-id= the unique routing id for the client
 
     =routing-ids= a list of additional id's the client wants to receive objects for
