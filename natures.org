@@ -4,14 +4,17 @@ Natures be documented.
 
 * Natures
 ** irc
+  Needless to say, something originating from IRC. Typically delivered by KARR.
 *** metadata fields
   =channel=
   =sender=
-** hyperlink **
-  payload is text/plain and interpreted as url
-** wuldget**
-  derived info for a hyperlink
+** hyperlink
+*** payload
+  Implies text/plain payload, interpreted as URL
+** wurldget
+  Derived info for a hyperlink
 *** metadata fields
   =title=
   =tinyurl=
-*** is_a hyperlink
+*** is_a
+  =hyperlink=
