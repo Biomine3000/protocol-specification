@@ -9,7 +9,6 @@ Natures be documented.
   =channel=
   =sender=
 ** hyperlink
-*** payload
   Implies text/plain payload, interpreted as URL
 ** wurldget
   Derived info for a hyperlink
