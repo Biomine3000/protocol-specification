@@ -1,0 +1,17 @@
+|B|I|O|M|I|N|E|3|0|0|0| |N|A|T|U|R|E|S|
+
+Natures be documented.
+
+* Natures
+** irc
+*** metadata fields
+  =channel=
+  =sender=
+** hyperlink **
+  payload is text/plain and interpreted as url
+** wuldget**
+  derived info for a hyperlink
+*** metadata fields
+  =title=
+  =tinyurl=
+*** is_a hyperlink
