@@ -1,6 +1,6 @@
 |B|I|O|M|I|N|E|3|0|0|0| |N|A|T|U|R|E|S|
 
-Natures be documented.
+HORSES' HOOFS ARE MADE for treading frost and snow, their coats for keeping out wind and cold. To munch grass, drink from the stream, lift up their feet and gallop this is the true nature of horses. Though they might possess great terraces and fine halls, they would have no use for them.
 
 * Natures
 ** irc
