@@ -1,7 +1,13 @@
 |B|I|O|M|I|N|E|3|0|0|0| |P|R|O|T|O|C|O|L| |S|P|E|C|S|
 
-This document describes the procotol used for communicating in the biomine3000 network, also known as
-Advanced Biomine Business Objects Bus (ABBOE).
+This document describes the procotol used for communicating 
+in the biomine3000 network, also known as Advanced Biomine 
+Business Objects Bus (ABBOE).
+
+Note that this document may or may not be considered *deprecated*,
+as it is perhaps believed to be replaced by another one in
+wiki. Said wiki can be checked out as follows:
+ =git clone git@github.com:Biomine3000/protocol-specification.wiki.git=
 
 * Objects in the Object System
   Objects consist of metadata and payload.  All objects must
