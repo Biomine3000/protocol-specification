@@ -15,6 +15,8 @@ HORSES' HOOFS ARE MADE for treading frost and snow, their coats for keeping out 
 ** error
   An error of arbitrary severity during arbitrary proceedings within ABBOE. 
   Any other semantics and/or structure implied by this nature remains to be specified.
+  Relationship with error events be specified (if such a species of events is even
+  believed to exist remains, however, unclear to the author) 
 
 *** is_a
   =message=
