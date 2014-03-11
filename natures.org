@@ -7,7 +7,7 @@ HORSES' HOOFS ARE MADE for treading frost and snow, their coats for keeping out 
   A social or antisocial short bulletin in the stream of daily lives reporting.
 
 ** warning
-  Needless to say, a warning, used e.g. to by server no notify deprecated clients of their folly.
+  Needless to say, a warning, used e.g. by a server to notify deprecated clients of their folly.
 
 *** is_a 
   =message=
