@@ -3,13 +3,35 @@
 HORSES' HOOFS ARE MADE for treading frost and snow, their coats for keeping out wind and cold. To munch grass, drink from the stream, lift up their feet and gallop this is the true nature of horses. Though they might possess great terraces and fine halls, they would have no use for them. - Chuang Tzu
 
 * Natures
+** message 
+  A social or antisocial short bulletin in the stream of daily lives reporting.
+
+** warning
+  Needless to say, a warning, used e.g. to by server no notify deprecated clients of their folly.
+
+*** is_a 
+  =message=
+
+** error
+  An error of arbitrary severity during arbitrary proceedings within ABBOE. 
+  Any other semantics and/or structure implied by this nature remains to be specified.
+
+*** is_a
+  =message=
+
+*** may_be_a
+  =warning=
+
 ** irc
-  Needless to say, something originating from IRC. Typically delivered by KARR.
+  Needless to say, something originating from IRC. Typically a message. Typically delivered by KARR.
+ 
 *** metadata fields
   =channel=
   =sender=
+
 ** hyperlink
   Implies text/plain payload, interpreted as URL
+
 ** wurldget
   Derived info for a hyperlink
 *** metadata fields
